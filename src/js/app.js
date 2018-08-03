@@ -59,7 +59,6 @@ function initMap() {
   });
 }
 
-
 function crearMarcador(place) {
 
   var marker = new google.maps.Marker({
@@ -73,7 +72,6 @@ function crearMarcador(place) {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
-
 }
 
 const createCard = (place) => {
