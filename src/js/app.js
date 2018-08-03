@@ -36,44 +36,44 @@ function initMap() {
 
     var serviceRestaurant = new google.maps.places.PlacesService(map);
 
-    serviceRestaurant.nearbySearch(request, function (results, status) {
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-          crearMarcador(results[i]);
-        }
-      }
-
-      const filterFood = (results, search) => {
-        return results.filter((option) => {
-          return option.name.toLowerCase().indexOf(search.toLowerCase()) > -1
-        })
-      }
-
-      searchData.addEventListener('keyup', () => {
-        const data = searchData.value;
-        let resultado2 = filterFood(results, data);
-        cardContent.innerHTML = ''
-        resultado2.forEach(element => {
-          createCard(element);
-        })
-      })
-
-    });
+    serviceRestaurant.nearbySearch(request, callBack);
 
   });
 }
 
+function callBack(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      crearMarcador(results[i]);
+    }
+  }
+
+  const filterFood = (results, search) => {
+    return results.filter((option) => {
+      return option.name.toLowerCase().indexOf(search.toLowerCase()) > -1
+    })
+  }
+
+  searchData.addEventListener('keyup', () => {
+    const data = searchData.value;
+    let resultado2 = filterFood(results, data);
+    cardContent.innerHTML = ''
+    resultado2.forEach(element => {
+      createCard(element);
+    })
+  })
+}
 
 function crearMarcador(place) {
 
-  var marker = new google.maps.Marker({
+  var newMarkers = new google.maps.Marker({
     map: map,
     position: place.geometry.location
   });
   // console.log(place);
   createCard(place);
   // Evento click para el marcador
-  google.maps.event.addListener(marker, 'click', function () {
+  google.maps.event.addListener(newMarkers, 'click', function () {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
