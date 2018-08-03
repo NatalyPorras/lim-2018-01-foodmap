@@ -113,6 +113,25 @@ const createCard = (place) => {
   </div>
 `
 
+  var mapOptions = {
+    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
+    zoom: 10
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
+
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(myLatlng);
+  })
+
+
 }
 
 
