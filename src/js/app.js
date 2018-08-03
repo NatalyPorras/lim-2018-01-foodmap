@@ -22,17 +22,16 @@ function initMap() {
     // Creamos el infowindow
     infowindow = new google.maps.InfoWindow();
 
-    // Especificamos la localización, el radio y el tipo de lugares que queremos obtener
+    // Se ingresa la latitud y longitud, un radio de distancia y el tipo
     var request = {
       location: textLatitudLongitud,
-      radius: 500,
+      radius: 700,
       types: ['restaurant']
     };
 
-    // Creamos el servicio PlaceService y enviamos la petición.
-    var service = new google.maps.places.PlacesService(map);
+    var serviceRestaurant = new google.maps.places.PlacesService(map);
 
-    service.nearbySearch(request, function (results, status) {
+    serviceRestaurant.nearbySearch(request, function (results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
           crearMarcador(results[i]);
@@ -68,11 +67,28 @@ function crearMarcador(place) {
   });
   // console.log(place);
   createCard(place);
-  // Asignamos el evento click del marcador
+  // Evento click para el marcador
   google.maps.event.addListener(marker, 'click', function () {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
+
+}
+
+
+function inicializar (place){
+
+  var mapOptions = {
+    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
+    zoom: 50
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
 
 }
 
@@ -84,6 +100,7 @@ const createCard = (place) => {
   if (!photos) {
     return;
   }
+
   cardContent.innerHTML += ` 
   <div class="card">
     <div class="card-body">
@@ -101,9 +118,9 @@ const createCard = (place) => {
           </button>
         </div>
         <div class="modal-body">
-          <div style="width: 600px; height: 400px;" id="map_canvas${place.id}"></div>
-          <p class="card-text">${place.rating}</p>
-          <p class="card-text">${place.vicinity}</p>
+          <div style="width: 300px; height: 200px;" id="map_canvas${place.id}"></div>
+          <p class="card-text">Puntuación: ${place.rating}</p>
+          <p class="card-text">Dirección: ${place.vicinity}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
@@ -112,27 +129,10 @@ const createCard = (place) => {
     </div>
   </div>
 `
-
-  var mapOptions = {
-    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
-    zoom: 10
-  };
-  var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
-
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-  $('#myModal').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-    google.maps.event.trigger(map, "resize");
-    map.setCenter(myLatlng);
-  })
-
+inicializar(place);
 }
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus');
 
-
-
-
+})
