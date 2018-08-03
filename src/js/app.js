@@ -2,6 +2,11 @@ var map;
 var infowindow;
 const searchData = document.getElementById('searchData');
 const cardContent = document.querySelector('.card-columns');
+const home = document.getElementById('logo-header');
+
+home.addEventListener('click',()=>{
+  window.location.href='splash.html';
+})
 
 function initMap() {
   navigator.geolocation.getCurrentPosition(function (posicion) {
