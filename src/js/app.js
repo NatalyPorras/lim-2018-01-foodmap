@@ -119,7 +119,6 @@ const createCard = (place) => {
   };
   var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
 
-
   var marker = new google.maps.Marker({
     map: map,
     position: place.geometry.location
@@ -130,7 +129,6 @@ const createCard = (place) => {
     google.maps.event.trigger(map, "resize");
     map.setCenter(myLatlng);
   })
-
 
 }
 
