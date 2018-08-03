@@ -5,7 +5,7 @@ const cardContent = document.querySelector('.card-columns');
 const home = document.getElementById('logo-header');
 
 home.addEventListener('click',()=>{
-  window.location.href='splash.html';
+  window.location.href='sesionInicial.html';
 })
 
 function initMap() {
