@@ -1,0 +1,24 @@
+@font-face{
+    font-family: "ModernAntiqua-Regular";
+    src: url(../fuentes/ModernAntiqua-Regular.tff)
+}
+@font-face{
+    font-family: "OpenSansCondensed-Bold";
+    src: url(../fuentes/OpenSansCondensed-Bold.tff)
+}
+@font-face{
+    font-family: "OpenSansCondensed-LightItalic";
+    src: url(../fuentes/OpenSansCondensed-LightItalic.tff)
+}
+@font-face{
+    font-family: "Inconsolata-Regular";
+    src: url(../fuentes/Inconsolata-Regular.tff)
+}
+@font-face{
+    font-family: "KirangHaerang-Regular";
+    src: url(../fuentes/KirangHaerang-Regular.tff)
+}
+@font-face{
+    font-family: "Pacifico-Regular";
+    src: url(../fuentes/Pacifico-Regular.tff)
+}
