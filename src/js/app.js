@@ -39,7 +39,21 @@ function initMap() {
         }
       }
 
-  
+      const filterFood = (results, search) => {
+        return results.filter((option) => {
+          return option.name.toLowerCase().indexOf(search.toLowerCase()) > -1
+        })
+      }
+
+      searchData.addEventListener('keyup', () => {
+        const data = searchData.value;
+        let resultado2 = filterFood(results, data);
+        cardContent.innerHTML = ''
+        resultado2.forEach(element => {
+          createCard(element);
+        })
+      })
+
     });
 
   });
@@ -98,6 +112,7 @@ const createCard = (place) => {
     </div>
   </div>
 `
+
 }
 
 
