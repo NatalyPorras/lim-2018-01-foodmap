@@ -81,21 +81,7 @@ function crearMarcador(place) {
 }
 
 
-function inicializar (place){
 
-  var mapOptions = {
-    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
-    zoom: 50
-  };
-  var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
-
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-
-}
 
 const createCard = (place) => {
   var photos = place.photos;
@@ -123,7 +109,7 @@ const createCard = (place) => {
           </button>
         </div>
         <div class="modal-body">
-          <div style="width: 300px; height: 200px;" id="map_canvas${place.id}"></div>
+         
           <p class="card-text">Puntuación: ${place.rating}</p>
           <p class="card-text">Dirección: ${place.vicinity}</p>
         </div>
@@ -134,10 +120,23 @@ const createCard = (place) => {
     </div>
   </div>
 `
-inicializar(place);
+
+  // var mapOptions = {
+  //   center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
+  //   zoom: 50
+  // };
+  // var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
+
+  // var marker = new google.maps.Marker({
+  //   map: map,
+  //   position: place.geometry.location
+  // });
+
+
 }
 
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus');
+  // $("exampleModalCenter" + place.id).on('shown.bs.modal', function () {
+  //   $('#myInput').trigger('focus');
 
-})
+  // })
+

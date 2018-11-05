@@ -2,10 +2,8 @@
 
 body{
     background-color: rgb(255,238,173);
-    width: 100%;
     height: 100%;
 }
-<<<<<<< HEAD
 .contentTotal{
   width: 50%;
   margin: 10% auto;
@@ -15,39 +13,25 @@ body{
 
 #contenidoImagen{
     width: 35%;
-    height: 200px;
+    height: 410px;
     margin: 0 auto;
-=======
-
-section{
-  margin: 17% 0
-}
-
-#contenidoImagen{
-    width: 100%;
-    height: 170px;
-    margin: 100px auto;
->>>>>>> a5b09ab9b24284c106142fcb7d0cc0301beda091
 }
 
 h3{
   font-family: 'Pacifico',serif;
-<<<<<<< HEAD
-  font-size: 40px;
-=======
-  font-size: 25px;
->>>>>>> a5b09ab9b24284c106142fcb7d0cc0301beda091
+  font-size: 45px;
   color: #000000;
+  font-weight: 100;
 }
 
 .rotate{
     background-color:#e01563;
     z-index:999;
-    padding: 85px 10px;
+    padding: 200px 25px;
     width: 2px;
     border-radius: 25px;
     opacity:0.8;
-    margin-left: 42%;
+    margin-left: 6%;
     position: absolute;
   }
   
