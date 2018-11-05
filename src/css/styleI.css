@@ -1,4 +1,5 @@
 #main-header {
+<<<<<<< HEAD
     background: #333;
     color: white;
     height: 100px;
@@ -30,6 +31,29 @@
     height: 200px;
     width: 70vw;
     margin: 100px auto;
+=======
+    background: #e01563;
+    color: white;
+    height: 80px;
+    width: 100%;
+    left: 0;
+    top: 0;
+}   
+#main-header a {
+    color: white;
+}
+.navbar-brand{
+    font-size: 2.25rem;
+
+}
+.navbar-light .navbar-brand {
+    color: rgba(255,255,255,.9);
+}
+#contentMap{
+    height: 300px;
+    width: 100%;
+    margin: 50px auto;
+>>>>>>> a5b09ab9b24284c106142fcb7d0cc0301beda091
 }
 
 .input-group{

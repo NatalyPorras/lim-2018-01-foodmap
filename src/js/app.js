@@ -80,6 +80,23 @@ function crearMarcador(place) {
 
 }
 
+
+function inicializar (place){
+
+  var mapOptions = {
+    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
+    zoom: 50
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+
+}
+
 const createCard = (place) => {
   var photos = place.photos;
   // const nameType = Object.values(place.types);
@@ -106,7 +123,7 @@ const createCard = (place) => {
           </button>
         </div>
         <div class="modal-body">
-          <div id="#map_canvas${place.id}" style="width: 300px; height: 200px;"></div>
+          <div style="width: 300px; height: 200px;" id="map_canvas${place.id}"></div>
           <p class="card-text">Puntuación: ${place.rating}</p>
           <p class="card-text">Dirección: ${place.vicinity}</p>
         </div>
@@ -117,20 +134,10 @@ const createCard = (place) => {
     </div>
   </div>
 `
-  var mapOptions = {
-    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
-    zoom: 50
-  };
-  var map = new google.maps.Map(document.getElementById("#map_canvas"+place.id), mapOptions);
-
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
+inicializar(place);
+}
 
 $('#myModal').on('shown.bs.modal', function () {
-  google.maps.event.trigger(map, "resize");
+  $('#myInput').trigger('focus');
 
 })
-
-}
