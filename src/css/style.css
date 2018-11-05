@@ -5,33 +5,31 @@ body{
     width: 100%;
     height: 100%;
 }
-.contentTotal{
-  width: 50%;
-  margin: 10% auto;
-  text-align: center;
 
+section{
+  margin: 17% 0
 }
 
 #contenidoImagen{
-    width: 35%;
-    height: 200px;
-    margin: 0 auto;
+    width: 100%;
+    height: 170px;
+    margin: 100px auto;
 }
 
 h3{
   font-family: 'Pacifico',serif;
-  font-size: 40px;
+  font-size: 25px;
   color: #000000;
 }
 
 .rotate{
     background-color:#e01563;
     z-index:999;
-    padding: 100px 10px;
+    padding: 85px 10px;
     width: 2px;
     border-radius: 25px;
     opacity:0.8;
-    margin-left:110px;
+    margin-left: 42%;
     position: absolute;
   }
   
