@@ -30,7 +30,7 @@ function initMap() {
     // Se ingresa la latitud y longitud, un radio de distancia y el tipo
     var request = {
       location: textLatitudLongitud,
-      radius: 700,
+      radius: 300,
       types: ['restaurant']
     };
 
