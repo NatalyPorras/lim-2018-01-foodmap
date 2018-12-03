@@ -1,40 +1,98 @@
 #main-header {
-    background: #e01563;
-    color: white;
-    height: 80px;
+    background: #006569;
     width: 100%;
     left: 0;
     top: 0;
+
 }   
-#main-header a {
-    color: white;
+.navbar{
+    justify-content: center;
+    padding: 0;
+}
+.navbar img{
+    width: 15%;
+    margin-right: 5px;
 }
 .navbar-brand{
-    font-size: 2.25rem;
-
+    padding: 0;
+}
+.letterUpperCase{
+    font-family: "Fascinate-Regular";
+    font-size: 45px
+}
+.letterLowerCase{
+    font-family: "Kavoon-Regular";
+    font-size: 30px
+}
+.letterULCase{
+    font-family: "Molle-Regular";
+    font-size: 40px
 }
 .navbar-light .navbar-brand {
-    color: rgba(255,255,255,.9);
+    color: #f4e1d3;
+    font-size: 30px;
 }
 #contentMap{
-    height: 300px;
-    width: 100%;
-    margin: 50px auto;
+    height: 350px;
+    margin-top: 5em;
+    margin-bottom: 1em
 }
-
+.form-control{
+    padding: .375rem .55rem;
+    font-size: 0.7rem;
+}
 .input-group{
-    width: 95%;
+    width: 98%;
     margin: 5px auto;
 }
 .input-group-text{
-    background-color: #ffcc5c
+    background-color: #ee340b;
+    color: #f4e1d3;
+    padding: .3rem .4rem;
+    font-size: 0.7rem;
 }
 .card-img-top{
     width: 100%;
+    height: 20%;
 }
-.card-columns{
-    column-count: 4;
+.card-deck{
+    column-count: 1;
 }
-.card-columns .card{
-    width: 100%;
+.card{
+    margin-bottom: .25rem;
+    width: 80%;
+    margin: 2% auto;
+}
+
+.card-body {
+    padding: 0.1rem;
+}
+.modal-header{
+    border-bottom: 0;
+    padding: .1em
+}
+.modal-header .close{
+    padding: .1em;
+    margin: .05em .5em .1em auto
+}
+.close{
+    font-size: 1.4em
+}
+.modal-body{
+    padding: .05em 1em;
+}
+.card-title{
+    margin: .6em 0;
+    text-align: center;
+}
+
+.card-text{
+    margin-bottom: .2em;
+    font-size: 12px;
+}
+.modal-footer{
+    padding: .5em 1em
+}
+.btn{
+    padding: .2em .7em
 }

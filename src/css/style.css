@@ -1,40 +1,41 @@
 
-
 body{
-    background-color: rgb(255,238,173);
-    width: 100%;
-    height: 100%;
+    background-color: #006569;
+    display: flex;
+    height: 100vh;
+    align-items: center;
 }
 
 section{
-  margin: 17% 0
+  padding: 2% 0;
 }
 
 #contenidoImagen{
-    width: 100%;
-    height: 170px;
-    margin: 100px auto;
+    width: 10em;
+    height: 17em;
+    margin: 0 auto;
 }
 
 h3{
   font-family: 'Pacifico',serif;
-  font-size: 25px;
-  color: #000000;
+  font-size: 1.5em;
+  color:  #f4e1d3;
+  font-weight: 100;
 }
 
 .rotate{
-    background-color:#e01563;
+    background-color:#00a79f;
     z-index:999;
-    padding: 85px 10px;
+    padding: 120px 18px;
     width: 2px;
     border-radius: 25px;
     opacity:0.8;
-    margin-left: 42%;
+    margin: 1em 4em;
     position: absolute;
   }
   
   .rotating {
-    background-color:#e9a820;
+    background-color:#ee340b;
     -webkit-animation: rotating 2s linear forwards;
     -moz-animation: rotating 2s linear forwards;
     -ms-animation: rotating 2s linear forwards;
@@ -43,7 +44,7 @@ h3{
   }
   
   .rotating-left {
-    background-color:#3eb991;
+    background-color:#e79b6a;
     -webkit-animation: rotating-left 2s linear forwards;
     -moz-animation: rotating-left 2s linear forwards;
     -ms-animation: rotating-left 2s linear forwards;

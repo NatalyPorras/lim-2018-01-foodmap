@@ -1,12 +1,7 @@
 var map;
 var infowindow;
 const searchData = document.getElementById('searchData');
-const cardContent = document.querySelector('.card-columns');
-const home = document.getElementById('logo-header');
-
-home.addEventListener('click',()=>{
-  window.location.href='sesionInicial.html';
-})
+const cardContent = document.querySelector('.card-deck');
 
 function initMap() {
   navigator.geolocation.getCurrentPosition(function (posicion) {
@@ -23,31 +18,24 @@ function initMap() {
     };
 
     map = new google.maps.Map(document.getElementById("contentMap"), opcionesMap);
-
-    // Creamos el infowindow
     infowindow = new google.maps.InfoWindow();
-
-    // Se ingresa la latitud y longitud, un radio de distancia y el tipo
     var request = {
       location: textLatitudLongitud,
-      radius: 300,
+      radius: 900,
       types: ['restaurant']
     };
 
     var serviceRestaurant = new google.maps.places.PlacesService(map);
-
     serviceRestaurant.nearbySearch(request, callBack);
-
   });
 }
 
-function callBack(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      crearMarcador(results[i]);
+  function callBack(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        crearMarcador(results[i]);
+      }
     }
-  }
-
   const filterFood = (results, search) => {
     return results.filter((option) => {
       return option.name.toLowerCase().indexOf(search.toLowerCase()) > -1
@@ -81,50 +69,33 @@ function crearMarcador(place) {
 }
 
 
-function inicializar (place){
 
-  var mapOptions = {
-    center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
-    zoom: 50
-  };
-  var map = new google.maps.Map(document.getElementById("map_canvas"+place.id), mapOptions);
-
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-
-}
 
 const createCard = (place) => {
   var photos = place.photos;
-  // const nameType = Object.values(place.types);
-  // const title = nameType['restaurant'];
-  // console.log(title);
   if (!photos) {
     return;
   }
 
-  cardContent.innerHTML += ` 
+  const cardPlaces = document.createElement("div");
+  cardPlaces.innerHTML = ` 
   <div class="card">
-    <div class="card-body">
     <!-- Button trigger modal -->
-    <img class="card-img-top" src="${photos[0].getUrl({ 'maxWidth': 350, 'maxHeight': 350 })}" alt="Card image cap" data-toggle="modal" data-target="#exampleModalCenter${place.id}">
-    </div>
+    <img class="card-img-top" src="${photos[0].getUrl({ 'maxWidth': 150, 'maxHeight': 150 })}" alt="Card image cap" data-toggle="modal" data-target="#exampleModalCenter${place.id}">
+
     <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter${place.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="card-title">${place.name}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div style="width: 300px; height: 200px;" id="map_canvas${place.id}"></div>
-          <p class="card-text">Puntuación: ${place.rating}</p>
+        <div style="width: 100%; height: 200px;" id="map-container-${place.id}" class="map-container"></div>
+        <h5 class="card-title">${place.name}</h5>
+        <p class="card-text">Puntuación: ${place.rating}</p>
           <p class="card-text">Dirección: ${place.vicinity}</p>
         </div>
         <div class="modal-footer">
@@ -134,10 +105,15 @@ const createCard = (place) => {
     </div>
   </div>
 `
-inicializar(place);
+cardContent.appendChild(cardPlaces)
+var mapOptionsModal= {
+  center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
+  zoom: 20
+};
+var mapModal = new google.maps.Map(document.getElementById("map-container-"+place.id), mapOptionsModal);
+
+var marker = new google.maps.Marker({
+  map: mapModal,
+  position: place.geometry.location
+});
 }
-
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus');
-
-})
