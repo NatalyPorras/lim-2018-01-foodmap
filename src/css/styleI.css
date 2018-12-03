@@ -53,14 +53,14 @@
 }
 .card-img-top{
     width: 100%;
-    height: 20%;
+    height: 170px;
 }
 .card-deck{
     column-count: 1;
 }
 .card{
     margin-bottom: .25rem;
-    width: 80%;
+    width: 90%;
     margin: 2% auto;
 }
 
