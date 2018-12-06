@@ -8,17 +8,18 @@ body{
 
 section{
   padding: 2% 0;
+  margin: 0 auto;
 }
 
 #contenidoImagen{
     width: 10em;
-    height: 17em;
+    height: 19em;
     margin: 0 auto;
 }
 
 h3{
   font-family: 'Pacifico',serif;
-  font-size: 1.5em;
+  font-size: 1.6em;
   color:  #f4e1d3;
   font-weight: 100;
 }
@@ -30,7 +31,7 @@ h3{
     width: 2px;
     border-radius: 25px;
     opacity:0.8;
-    margin: 1em 4em;
+    margin: 2em 4em;
     position: absolute;
   }
   
@@ -82,3 +83,45 @@ h3{
     }
   }
   
+  
+@media only screen and (min-width: 768px) { 
+  h3{
+    font-size: 2.5em;
+  }
+    #contenidoImagen{
+      width: 20em;
+      height: 23em;
+      
+  }
+  .rotate{
+    margin: 2.5em 9em;
+    padding: 150px 25px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h3{
+    font-size: 2.5em;
+  }
+    #contenidoImagen{
+      width: 20em;
+      height: 24em;
+  }
+  .rotate{
+    margin: 3em 9em;
+    padding: 150px 20px;
+  }
+
+}
+@media only screen and (min-width: 1200px) { 
+  h3{
+    font-size: 2.5em;
+  }
+    #contenidoImagen{
+      width: 20em;
+      height: 25em;
+  }
+  .rotate{
+    margin: 2em 9em;
+    padding: 170px 25px;
+  }
+}
