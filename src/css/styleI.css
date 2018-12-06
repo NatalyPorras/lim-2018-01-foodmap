@@ -1,20 +1,25 @@
+/* Estilos generales */
+.colorLetter{
+    color: #f4e1d3;
+}
+
+/* Estilos Header */
+
 #main-header {
     background: #006569;
     width: 100%;
-    left: 0;
-    top: 0;
-
 }   
 .navbar{
     justify-content: center;
     padding: 0;
 }
 .navbar img{
-    width: 15%;
+    width: 3em;
     margin-right: 5px;
 }
 .navbar-brand{
     padding: 0;
+    margin:0
 }
 .letterUpperCase{
     font-family: "Fascinate-Regular";
@@ -28,43 +33,44 @@
     font-family: "Molle-Regular";
     font-size: 40px
 }
-.navbar-light .navbar-brand {
-    color: #f4e1d3;
-    font-size: 30px;
-}
-#contentMap{
-    height: 350px;
+
+/* Content */
+
+/* Map */
+.mapGeneral{
     margin-top: 5em;
+}
+
+ #contentMap{
+     width: 100%;
+    height: 350px;
     margin-bottom: 1em
 }
+
+/* Buscador */
+
 .form-control{
     padding: .375rem .55rem;
     font-size: 0.7rem;
 }
-.input-group{
-    width: 98%;
-    margin: 5px auto;
-}
+
 .input-group-text{
     background-color: #ee340b;
     color: #f4e1d3;
     padding: .3rem .4rem;
     font-size: 0.7rem;
 }
-.card-img-top{
+/* Card */
+.cardContent{
     width: 100%;
-    height: 170px;
-}
-.card-deck{
-    column-count: 1;
-}
-.card{
-    margin-bottom: .25rem;
-    width: 90%;
-    margin: 2% auto;
 }
 
-.card-body {
+.card-img-top{
+    width: 100%;
+    height: 150px;
+}
+/* Card - interno */
+ .card-body {
     padding: 0.1rem;
 }
 .modal-header{
@@ -79,20 +85,131 @@
     font-size: 1.4em
 }
 .modal-body{
-    padding: .05em 1em;
-}
-.card-title{
-    margin: .6em 0;
-    text-align: center;
+    padding: 0;
 }
 
+.descriptionCard{
+    margin: 0.5em
+}
+.card-title{
+    margin: .6em 0 .3em;
+    font-family: "Kavoon-Regular";
+}
 .card-text{
     margin-bottom: .2em;
-    font-size: 12px;
+    font-size: 15px;
 }
 .modal-footer{
     padding: .5em 1em
 }
 .btn{
-    padding: .2em .7em
+    padding: .2em .9em;
+    font-size: 1em;
 }
+
+
+ @media (min-width: 768px) { 
+/* Card */
+.cardContent{
+    width: 50%;
+    margin: 1% auto;
+}
+.map-container{
+    height: 250px;
+}
+.descriptionCard{
+    margin: 0.6em
+}
+.card-title{
+    margin: .6em 0 .3em;
+    font-size: 2em;
+}
+.card-text{
+    font-size: 1em;
+}
+}
+@media (min-width: 992px) {
+    .navbar img{
+        width: 4em;
+    }
+    .letterUpperCase{
+        font-size: 60px
+    }
+    .letterLowerCase{
+        font-size: 40px
+    }
+    .letterULCase{
+        font-size: 55px
+    }
+    /* Map */
+    .mapGeneral{
+        margin-top: 7em;
+    }
+    /* Card */
+
+    .cardContent{
+        width: 33%;
+        margin: 1% auto;
+    }
+    .modal-dialog {
+        max-width: 600px;
+    }
+
+ }
+@media (min-width: 1200px) { 
+    .navbar img{
+        width: 5.5em;
+    }
+    .letterUpperCase{
+        font-size: 75px
+    }
+    .letterLowerCase{
+        font-size: 50px
+    }
+    .letterULCase{
+        font-size: 70px
+    }
+    /* Map */
+    .mapGeneral{
+        margin-top: 9em;
+    }
+    /* Buscador */
+
+.form-control{
+    font-size: 0.9rem;
+}
+
+.input-group-text{
+    background-color: #ee340b;
+    color: #f4e1d3;
+    padding: .3rem .5rem;
+    font-size: 0.9rem;
+}
+    /* Card */
+.close{
+    font-size: 1.8em
+}
+.cardContent{
+    width: 25%;
+    margin: 1% auto;
+}
+.modal-dialog {
+    max-width: 700px;
+}
+.descriptionCard{
+    margin: 0.8em
+}
+.card-title{
+    font-size: 3em;
+}
+.card-text{
+    font-size: 1.3em;
+}
+.modal-footer{
+    padding: .5em 1em
+}
+.btn{
+    padding: .2em .9em;
+    font-size: 1.3em;
+}
+ }

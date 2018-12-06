@@ -15,28 +15,42 @@
 
 <body>
     <header id="main-header" class="fixed-top">
-        <nav class="navbar navbar-light">
+        <nav class="navbar">
             <img src="./iconos/icons8-ejercicio-96.png" alt="">
-            <a id="logo-header" href="#">
-                <div class="navbar-brand">
-                    <span class="letterUpperCase">E</span><span class="letterLowerCase">ating</span>  <span class="letterULCase">Go!</span> 
-                </div>
+            <a id="logo-header" class="navbar-brand colorLetter" href="#">
+                    <span class="letterUpperCase">E</span><span class="letterLowerCase">ating</span><span class="letterULCase">Go!</span> 
             </a>
         </nav>
     </header>
 
-    <div id="contentMap"> </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-                <i class="icon-search"></i> Buscar</span>
+    <section class="mapGeneral">
+        <div class="container">
+            <div class="row">
+                <div id="contentMap"> </div>
+            </div>
         </div>
-        <input type="text" class="form-control" placeholder="Ingresa Restaurante" aria-label="Ingresa Restaurante"
-            aria-describedby="basic-addon1" id="searchData">
-    </div>
-    <div class="card-deck">
-        
-    </div>
+    </section>
+
+    <section class="searchType">
+        <div class="container">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="icon-search"></i> Buscar</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Ingresa Restaurante" aria-label="Ingresa Restaurante"
+                    aria-describedby="basic-addon1" id="searchData">
+            </div>
+        </div>
+    </section>
+
+    <section class="contentCards">
+        <div class="container">
+            <div class="card-deck">
+            </div>
+        </div>
+    </section>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

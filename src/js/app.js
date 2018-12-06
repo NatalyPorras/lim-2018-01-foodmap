@@ -13,7 +13,7 @@ function initMap() {
 
     var opcionesMap = {
       center: textLatitudLongitud,
-      zoom: 16,
+      zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
@@ -78,6 +78,7 @@ const createCard = (place) => {
   }
 
   const cardPlaces = document.createElement("div");
+  cardPlaces.className = "cardContent"
   cardPlaces.innerHTML = ` 
   <div class="card">
     <!-- Button trigger modal -->
@@ -93,10 +94,12 @@ const createCard = (place) => {
           </button>
         </div>
         <div class="modal-body">
-        <div style="width: 100%; height: 200px;" id="map-container-${place.id}" class="map-container"></div>
-        <h5 class="card-title">${place.name}</h5>
-        <p class="card-text">Puntuación: ${place.rating}</p>
+          <div style="width: 100%; height: 200px;" id="map-container-${place.id}" class="map-container"></div>
+          <div class="descriptionCard">
+          <h5 class="card-title">${place.name}</h5>
+          <p class="card-text">Puntuación: ${place.rating}</p>
           <p class="card-text">Dirección: ${place.vicinity}</p>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
@@ -108,7 +111,7 @@ const createCard = (place) => {
 cardContent.appendChild(cardPlaces)
 var mapOptionsModal= {
   center: new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),
-  zoom: 20
+  zoom: 18
 };
 var mapModal = new google.maps.Map(document.getElementById("map-container-"+place.id), mapOptionsModal);
 
