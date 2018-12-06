@@ -27,11 +27,11 @@ h3{
 .rotate{
     background-color:#00a79f;
     z-index:999;
-    padding: 120px 18px;
+    padding: 130px 20px;
     width: 2px;
     border-radius: 25px;
     opacity:0.8;
-    margin: 2em 4em;
+    margin: 1.5em 4em;
     position: absolute;
   }
   
@@ -86,42 +86,40 @@ h3{
   
 @media only screen and (min-width: 768px) { 
   h3{
-    font-size: 2.5em;
+    font-size: 2.3em;
   }
-    #contenidoImagen{
-      width: 20em;
-      height: 23em;
-      
+  #contenidoImagen{
+    width: 20em;
+    height: 23em;
   }
   .rotate{
-    margin: 2.5em 9em;
-    padding: 150px 25px;
+    margin: 2em 9em;
+    padding: 150px 23px;
   }
 }
 @media only screen and (min-width: 992px) {
   h3{
     font-size: 2.5em;
   }
-    #contenidoImagen{
-      width: 20em;
-      height: 24em;
+  #contenidoImagen{
+    width: 20em;
+    height: 24em;
   }
   .rotate{
-    margin: 3em 9em;
-    padding: 150px 20px;
+    margin: 1.5em 9em;
+    padding: 170px 25px;
   }
-
 }
 @media only screen and (min-width: 1200px) { 
   h3{
-    font-size: 2.5em;
+    font-size: 2.8em;
   }
     #contenidoImagen{
       width: 20em;
       height: 25em;
   }
   .rotate{
-    margin: 2em 9em;
-    padding: 170px 25px;
+    margin: 1.5em 9em;
+    padding: 180px 29px;
   }
 }
